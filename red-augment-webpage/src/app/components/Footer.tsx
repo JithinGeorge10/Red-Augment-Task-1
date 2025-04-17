@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-gray-300 py-16 px-8 font-Montserrat">
+    <footer className="bg-neutral-900 text-gray-300 py-16 px-8 font-Montserrat relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-4 gap-12">
         {/* Column 1: Logo and Description */}
         <div className="space-y-4">
@@ -75,6 +75,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* Unfocused Golden Circle with reduced size and brightness */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-yellow-800 to-yellow-950 opacity-20 blur-2xl rounded-full w-[1100px] h-[200px] mx-auto"></div>
     </footer>
   );
 }

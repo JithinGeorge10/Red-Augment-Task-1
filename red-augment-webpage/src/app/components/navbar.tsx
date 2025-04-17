@@ -1,6 +1,5 @@
 'use client'
 import { Briefcase, ChevronDown, Info, Logs } from "lucide-react";
-import { cn } from "../utils/utils";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -22,7 +21,7 @@ const Navbar = () => {
         setDropdownOpen(false);
     };
 
-    const handleNavClick = (label:any) => {
+    const handleNavClick = (label: any) => {
         router.push(`/${label}`);
     };
 
@@ -54,9 +53,10 @@ const Navbar = () => {
                             {dropdownOpen && (
                                 <div className="absolute top-full left-0 mt-1 bg-gray-600 text-white font-Montserrat text-sm shadow-lg z-50 w-22">
                                     <button className="hover:bg-gray-700 rounded-md w-full px-2 py-1 text-left flex gap-1">
-                                        <Info className="w-3 h-3 mt-1" />
+                                        <img src="path-to-your-image.jpg" alt="About Icon" className="w-3 h-3 mt-1" />
                                         About
                                     </button>
+
                                     <button
                                         onClick={handleBlogsClick}
                                         className="hover:bg-gray-700 rounded-md w-full px-2 py-1 text-left flex gap-1"

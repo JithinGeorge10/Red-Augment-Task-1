@@ -18,7 +18,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
             gradient: "from-purple-900/80 to-gray-900",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/5.png",
             position: "left-8 bottom-8",
         },
         {
@@ -26,7 +26,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
             gradient: "from-purple-600 to-purple-800",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/2.png",
             position: "right-8 bottom-8",
         },
         {
@@ -34,7 +34,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
             gradient: "from-indigo-600 to-purple-700",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/3.png",
             position: "right-8 bottom-8",
         },
         {
@@ -42,7 +42,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
             gradient: "from-blue-700 to-indigo-900",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/7.png",
             position: "right-8 bottom-8",
         },
         {
@@ -50,7 +50,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ",
             gradient: "from-purple-600 to-purple-800",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/7.png",
             position: "right-8 bottom-8",
         },
         {
@@ -58,7 +58,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
             gradient: "from-purple-600 to-purple-800",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/4.jpg",
             position: "right-8 bottom-8",
         },
         {
@@ -66,7 +66,7 @@ const Services = () => {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
             gradient: "from-purple-600 to-purple-800",
-            image: "/api/placeholder/600/600",
+            image: "/ServiceImages/8.png",
             position: "right-8 bottom-8",
         },
     ];
@@ -74,7 +74,27 @@ const Services = () => {
     return (
         <>
 
-<Navbar></Navbar>
+            <Navbar></Navbar>
+            <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
+                <div
+                    className="absolute w-[60vw] h-[60vw] bg-purple-400 rounded-full blur-3xl opacity-20"
+                    style={{
+                        animation: "rotateOne 20s linear infinite",
+                        top: "20%",
+                        left: "20%",
+                        transform: "translate(-50%, -50%)",
+                    }}
+                />
+                <div
+                    className="absolute w-[60vw] h-[60vw] bg-purple-800 rounded-full blur-3xl opacity-20"
+                    style={{
+                        animation: "rotateTwo 20s linear infinite",
+                        top: "80%",
+                        left: "80%",
+                        transform: "translate(-50%, -50%)",
+                    }}
+                />
+            </div>
 
 
             <div className="flex flex-col w-screen items-center mt-24">
@@ -82,13 +102,11 @@ const Services = () => {
                     Explore our services
                 </h1>
 
-
-
-
                 <Searchbar />
+
                 <div className="w-full py-8 px-4 font-Montserrat">
-                    <div className="flex flex-wrap justify-center gap-3">
-                        {services.map((service, index) => (
+                    <div className="flex justify-center gap-3 mb-4">
+                        {services.slice(0, 2).map((service, index) => (
                             <button
                                 key={index}
                                 className="px-6 py-2 rounded-full border text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
@@ -97,10 +115,21 @@ const Services = () => {
                             </button>
                         ))}
                     </div>
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {services.slice(2).map((service, index) => (
+                            <button
+                                key={index + 2} // offset index to keep keys unique
+                                className="px-6 py-2 rounded-full border text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
+                            >
+                                {service}
+                            </button>
+                        ))}
+                    </div>
                 </div>
+
             </div>
 
-            <div className="bg-gray-950 p-6">
+            <div className="p-6">
                 <div className="max-w-6xl mx-auto space-y-6">
                     {Array.from({ length: Math.ceil(servicesCard.length / 2) }).map(
                         (_, rowIndex) => {
@@ -127,7 +156,7 @@ const Services = () => {
                                         )}
 
                                         <div className={"absolute z-10 max-w-xs bottom-1 left-2"}>
-                                            <h2 className="text-3xl font-medium font-Montserrat text-white mb-3">
+                                            <h2 className="text-3xl  font-Montserrat text-white mb-3">
                                                 {card.title}
                                             </h2>
                                             <p className="text-gray-300 font-light font-Montserrat">

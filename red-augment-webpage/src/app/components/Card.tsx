@@ -49,29 +49,31 @@ export default function Card() {
     },
   ];
 
-  const handlePlanSelect = (planId:any) => {
+  const handlePlanSelect = (planId: any) => {
     setSelectedPlan(planId);
   };
 
   return (
     <>
-      
       <div className="grid grid-cols-3 gap-8 p-6 text-white font-Montserrat ">
         {plans.map((plan) => (
           <div
             key={plan.id}
-            className={`flex-1 rounded-4xl p-12 ${
-              plan.id === "enterprise" ? "bg-gray-800" : "bg-gray-900"
-            }`}
+            className={`flex-1 rounded-4xl p-12 ${plan.id === "enterprise"
+                ? "bg-gradient-to-b from-blue-950 via-black to-gray-700"
+                : plan.id === selectedPlan
+                  ? "bg-gradient-to-b from-black via-black to-black"
+                  : "bg-gradient-to-b from-black via-black to-black"
+              }`}
+
           >
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-2">
                 <div
-                  className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                    plan.id === selectedPlan
-                      ? "border-blue-500 bg-blue-500"
+                  className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${plan.id === selectedPlan
+                      ? "border-blue-500 bg-white"
                       : "border-gray-500"
-                  }`}
+                    }`}
                 >
                   {plan.id === selectedPlan && (
                     <div className="w-3 h-3 rounded-full bg-white"></div>
