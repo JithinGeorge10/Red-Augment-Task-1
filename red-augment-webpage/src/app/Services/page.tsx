@@ -77,7 +77,7 @@ const Services = () => {
             <Navbar></Navbar>
             <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
                 <div
-                    className="absolute w-[60vw] h-[60vw] bg-purple-400 rounded-full blur-3xl opacity-20"
+                    className="absolute w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] bg-purple-400 rounded-full blur-3xl opacity-20"
                     style={{
                         animation: "rotateOne 20s linear infinite",
                         top: "20%",
@@ -86,7 +86,7 @@ const Services = () => {
                     }}
                 />
                 <div
-                    className="absolute w-[60vw] h-[60vw] bg-purple-800 rounded-full blur-3xl opacity-20"
+                    className="absolute w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] bg-purple-800 rounded-full blur-3xl opacity-20"
                     style={{
                         animation: "rotateTwo 20s linear infinite",
                         top: "80%",
@@ -97,19 +97,18 @@ const Services = () => {
             </div>
 
 
-            <div className="flex flex-col w-screen items-center mt-24">
-                <h1 className="text-6xl font-[5px] mb-6 font-Montserrat bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent inline scale-x-110">
-                    Explore our services
+            <div className="flex flex-col w-screen items-center mt-16 md:mt-24">
+                <h1 className="text-4xl md:text-6xl font-[5px] mb-4 md:mb-6 font-Montserrat bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent inline scale-x-110">                    Explore our services
                 </h1>
 
                 <Searchbar />
 
-                <div className="w-full py-8 px-4 font-Montserrat">
-                    <div className="flex justify-center gap-3 mb-4">
+                <div className="w-full py-4 md:py-8 px-4 font-Montserrat">
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-3">
                         {services.slice(0, 2).map((service, index) => (
                             <button
                                 key={index}
-                                className="px-6 py-2 rounded-full border text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
+                                className="px-4 py-1.5 md:px-6 md:py-2 rounded-full border text-base md:text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
                             >
                                 {service}
                             </button>
@@ -119,7 +118,7 @@ const Services = () => {
                         {services.slice(2).map((service, index) => (
                             <button
                                 key={index + 2} // offset index to keep keys unique
-                                className="px-6 py-2 rounded-full border text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
+                                className="px-4 py-1.5 md:px-6 md:py-2 rounded-full border text-base md:text-lg border-gray-500 bg-gray-800/50 hover:bg-gray-500 text-white transition-colors duration-200"
                             >
                                 {service}
                             </button>
@@ -129,8 +128,8 @@ const Services = () => {
 
             </div>
 
-            <div className="p-6">
-                <div className="max-w-6xl mx-auto space-y-6">
+            <div className="p-4 md:p-6">
+                <div className="max-w-6xl mx-auto space-y-4 md:space-y-6">
                     {Array.from({ length: Math.ceil(servicesCard.length / 2) }).map(
                         (_, rowIndex) => {
                             const firstIndex = rowIndex * 2;
@@ -146,7 +145,7 @@ const Services = () => {
                                 return (
                                     <div
                                         key={index}
-                                        className={`rounded-3xl overflow-hidden relative bg-gradient-to-br ${card.gradient} ${widthClass} h-80`}
+                                        className={`rounded-2xl md:rounded-3xl overflow-hidden relative bg-gradient-to-br ${card.gradient} ${widthClass} h-64 md:h-80`}
                                     >
                                         {card.image && (
                                             <div
@@ -155,12 +154,11 @@ const Services = () => {
                                             />
                                         )}
 
-                                        <div className={"absolute z-10 max-w-xs bottom-1 left-2"}>
-                                            <h2 className="text-3xl  font-Montserrat text-white mb-3">
+                                        <div className="absolute z-10 bottom-4 left-4 right-4 md:bottom-2 md:left-2 md:right-2 md:max-w-xs">
+                                            <h2 className="text-lg md:text-3xl font-Montserrat text-white mb-2 md:mb-3">
                                                 {card.title}
                                             </h2>
-                                            <p className="text-gray-300 font-light font-Montserrat">
-                                                {card.description}
+                                            <p className="text-sm md:text-base text-gray-300 font-light font-Montserrat">                                                {card.description}
                                             </p>
                                         </div>
                                     </div>
@@ -169,7 +167,7 @@ const Services = () => {
 
                             if (!card2) {
                                 return (
-                                    <div key={rowIndex} className="flex flex-col md:flex-row">
+                                    <div key={rowIndex} className="flex flex-col">
                                         {renderCard(card1, "w-full", firstIndex)}
                                     </div>
                                 );
@@ -178,8 +176,8 @@ const Services = () => {
                             return (
                                 <div
                                     key={rowIndex}
-                                    className="flex flex-row justify-between gap-6"
-                                >
+                                    className="flex flex-col md:flex-row justify-between gap-4 md:gap-6"
+                                    >
                                     {isEvenRow ? (
                                         <>
                                             {renderCard(card1, "md:w-[70%]", firstIndex)}
