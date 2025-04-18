@@ -96,8 +96,8 @@ const Navbar = () => {
 
             {/* Mobile Dropdown */}
             {mobileMenuOpen && (
-                <div className="absolute top-20 left-0 w-full bg-gray-900 text-white font-Montserrat px-6 py-4 flex flex-col gap-4 md:hidden z-50">
-                    {navItems.map((item) =>
+                <div className="absolute top-20 left-0 w-full bg-gray-900 text-white font-Montserrat px-6 py-4 flex flex-col gap-4 items-start text-left md:hidden z-50">
+                {navItems.map((item) =>
                         item.hasDropdown ? (
                             <div key={item.label}>
                                 <button
